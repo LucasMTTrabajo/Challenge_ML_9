@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/txtV_title_fragemt_item_detail"
+                style="@style/fav_TxtViewTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_margin="@dimen/fav_margin_16"
+                android:text="TITULO"
+                />
+
+            <ImageView
+                android:id="@+id/imgV_fragment_items_detail_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtV_title_fragemt_item_detail"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/fav_margin_8"
+                android:background="@drawable/ic_placeholder_item_foreground"
+                android:scaleType="centerCrop" />
+
+            <LinearLayout
+                android:id="@+id/lnr_info_fragment_item_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imgV_fragment_items_detail_main"
+                android:layout_margin="@dimen/fav_margin_8"
+                android:background="@drawable/shape_style_rectangle_border_grey_r10"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtV_price_fragemt_item_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/fav_margin_8"
+                    android:text="PRECIO"
+                    style="@style/fav_TxtViewPrice"
+                    />
+
+                <TextView
+                    android:id="@+id/txtV_quantity_fragemt_item_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/fav_margin_8"
+                    android:text="CANTIDAD"
+                    style="@style/fav_TxtViewBody"
+                    />
+
+                <TextView
+                    android:id="@+id/txtV_extra_info_fragemt_item_detail"
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/fav_margin_8"
+                    android:gravity="center"
+                    android:text="EXTRA INFO"
+                    />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView_attributes_fragment_items_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/fav_margin_8"
+                    android:visibility="gone"
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>

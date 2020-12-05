@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_navigation_view"
+    app:startDestination="@id/nav_itemsFragment">
+
+    <fragment
+        android:id="@+id/nav_itemsFragment"
+        android:name="com.example.challenge_ml_1.ui.fragment.ItemsFragment"
+        android:label="ItemsFragment"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/main_navigation_view"
+        >
+        <action
+            android:id="@+id/action_itemsFragment_to_itemsDetailFragment"
+            app:destination="@id/nav_itemsDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_itemsDetailFragment"
+        android:name="com.example.challenge_ml_1.ui.fragment.ItemsDetailsFragment"
+        android:label="ItemsDetailFragment"
+        app:navGraph="@navigation/main_navigation_view"
+        >
+        <action
+            android:id="@+id/action_itemsDetail_to_itemsFragment"
+            app:destination="@id/nav_itemsFragment"
+            app:popUpTo="@id/nav_itemsFragment"
+            />
+    </fragment>
+
+</navigation>

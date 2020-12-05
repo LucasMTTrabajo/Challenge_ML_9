@@ -1,7 +1,8 @@
-package com.example.challenge_ml_1;
+package com.example.challenge_ml_1.utilitie.net;
 
 
-import okhttp3.ResponseBody;
+import com.example.challenge_ml_1.model.object.ResponseQuery;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -23,18 +24,18 @@ public interface ApiService {
 
 
     @GET("sites/MLA/search")
-    Call<ResponseBody> getItems(@Query("q") String aQueryValue );
+    Call<ResponseQuery> getItems(@Query("q") String aQueryValue );
 
 
     @GET("sites/MLA/search")
-    Call<ResponseBody> getItemsWithLimit(@Query("q") String aQueryValue , @Query("limit") String aLimitValue );
+    Call<ResponseQuery> getItemsWithLimit(@Query("q") String aQueryValue , @Query("limit") String aLimitValue );
 
 
     @GET("sites/MLA/search")
-    Call<ResponseBody> getItemsWithOffset(@Query("q") String aQueryValue , @Query("offset") String aOffsetValue );
+    Call<ResponseQuery> getItemsWithOffset(@Query("q") String aQueryValue , @Query("offset") String aOffsetValue );
 
 
     @GET("sites/MLA/search")
-    Call<ResponseBody> getItemsWithLimitAndOffset(@Query("q") String aQueryValue , @Query("limit") String aLimitValue , @Query("offset") String aOffsetValue);
+    Call<ResponseQuery> getItemsWithLimitAndOffset(@Query("q") String aQueryValue , @Query("limit") String aLimitValue , @Query("offset") String aOffsetValue);
 
 }

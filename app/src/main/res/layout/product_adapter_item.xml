@@ -1,55 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/lnr_main_product_adapter"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/fav_margin_6"
     android:padding="@dimen/fav_margin_8"
-    android:weightSum="10"
-    android:background="@drawable/shape_style_rectangle_border_r10"
+    android:background="@drawable/shape_style_rectangle_border_black_r10"
     >
 
     <ImageView
         android:id="@+id/imgV_main_product_adapter"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="8"
         android:background="@drawable/ic_disabled_by_default_black_48dp"
         android:layout_gravity="center"
-        android:layout_margin="@dimen/fav_margin_8"
+        android:layout_centerVertical="true"
         />
 
     <LinearLayout
         android:id="@+id/lnr_info_product_adapter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="2"
         android:orientation="vertical"
         android:layout_margin="@dimen/fav_margin_8"
-        >
+        android:layout_toRightOf="@id/imgV_main_product_adapter"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@id/imgV_main_product_adapter">
 
         <TextView
             android:id="@+id/txtV_title_product_adapter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:maxLines="1"
+            style="@style/TextAppearance.AppCompat.Title"
             />
 
         <TextView
             android:id="@+id/txtV_price_product_adapter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:maxLines="1"
             app:drawableEndCompat="@drawable/ic_navigate_next_black_18dp"
             app:drawableRightCompat="@drawable/ic_navigate_next_black_18dp"
             />
 
         <TextView
-            android:id="@+id/ttV_extra_product_adapter"
+            android:id="@+id/txtV_extra_product_adapter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:maxLines="1"
             />
 
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

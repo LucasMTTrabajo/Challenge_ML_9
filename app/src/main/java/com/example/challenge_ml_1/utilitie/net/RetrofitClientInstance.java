@@ -1,4 +1,4 @@
-package com.example.challenge_ml_1;
+package com.example.challenge_ml_1.utilitie.net;
 
 import java.util.concurrent.TimeUnit;
 
