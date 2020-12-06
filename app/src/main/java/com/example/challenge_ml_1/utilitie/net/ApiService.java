@@ -1,7 +1,10 @@
 package com.example.challenge_ml_1.utilitie.net;
 
 
+import com.example.challenge_ml_1.model.object.Categories;
 import com.example.challenge_ml_1.model.object.ResponseQuery;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -37,5 +40,9 @@ public interface ApiService {
 
     @GET("sites/MLA/search")
     Call<ResponseQuery> getItemsWithLimitAndOffset(@Query("q") String aQueryValue , @Query("limit") String aLimitValue , @Query("offset") String aOffsetValue);
+
+    @GET("sites/MLA/categories")
+    Call<List<Categories>> getCategories();
+
 
 }

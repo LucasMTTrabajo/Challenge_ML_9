@@ -19,8 +19,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_margin="@dimen/fav_margin_16"
-                android:text="TITULO"
-                />
+                android:text="TITULO" />
 
             <ImageView
                 android:id="@+id/imgV_fragment_items_detail_main"
@@ -43,21 +42,34 @@
 
                 <TextView
                     android:id="@+id/txtV_price_fragemt_item_detail"
+                    style="@style/fav_TxtViewPrice"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/fav_margin_8"
                     android:text="PRECIO"
-                    style="@style/fav_TxtViewPrice"
+                    android:background="@drawable/shape_style_rectangle_grey_r10"
                     />
 
                 <TextView
                     android:id="@+id/txtV_quantity_fragemt_item_detail"
+                    style="@style/fav_TxtViewBody"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/fav_margin_8"
                     android:text="CANTIDAD"
-                    style="@style/fav_TxtViewBody"
+                    android:background="@drawable/shape_style_rectangle_grey_r10"
                     />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lnr_info_fragment_item_detail"
+                android:layout_margin="@dimen/fav_margin_8"
+                android:background="@drawable/shape_style_rectangle_border_grey_r10"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/txtV_extra_info_fragemt_item_detail"
@@ -66,8 +78,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/fav_margin_8"
                     android:gravity="center"
-                    android:text="EXTRA INFO"
-                    />
+                    android:text="EXTRA INFO" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerView_attributes_fragment_items_details"

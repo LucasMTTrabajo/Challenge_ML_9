@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -17,6 +18,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.challenge_ml_1.model.viewmodel.CategoriesViewModel;
 import com.example.challenge_ml_1.model.viewmodel.ItemsAndSearchViewModel;
 import com.example.challenge_ml_1.R;
 import com.example.challenge_ml_1.model.object.Product;
@@ -41,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
             setContentView(R.layout.activity_main);
             navController = Navigation.findNavController(findViewById(R.id.fragment_main_activity));
 
@@ -67,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
                         getCurrentFragment();
 
                         if (currentFragment instanceof ItemsFragment) {
+                            searchView.setQuery("", false);
+                            searchView.setIconified(true);
                             ((ItemsFragment) currentFragment).nextViewFragment(product);
                         }
 

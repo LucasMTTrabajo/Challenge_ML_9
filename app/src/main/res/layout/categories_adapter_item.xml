@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_style_rectangle_border_grey_r10"
+    android:layout_margin="@dimen/fav_margin_8"
+    android:padding="@dimen/fav_margin_6"
+    >
+
+    <TextView
+        android:id="@+id/txtV_title_categories_adapter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/fav_TxtViewTitle"
+        android:gravity="center"
+        />
+
+</LinearLayout>

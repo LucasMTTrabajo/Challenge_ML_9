@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.Challenge_ML_1" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/ml_green</item>
+        <item name="colorPrimaryVariant">@color/ml_green_dark</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -13,20 +13,4 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
-
-    <style name="fav_TxtViewTitle" parent="Base.TextAppearance.AppCompat.Title">
-        <item name="android:textSize">@dimen/abc_text_size_title_material</item>
-        <item name="android:textColor">?android:textColorPrimary</item>
-    </style>
-
-    <style name="fav_TxtViewBody" parent="Base.TextAppearance.AppCompat.Title">
-        <item name="android:textSize">@dimen/abc_text_size_small_material</item>
-        <item name="android:textColor">?android:textColorPrimary</item>
-    </style>
-
-    <style name="fav_TxtViewPrice" parent="Base.TextAppearance.AppCompat.Title">
-        <item name="android:textSize">@dimen/abc_text_size_menu_material</item>
-        <item name="android:textColor">@color/grey</item>
-    </style>
-
 </resources>

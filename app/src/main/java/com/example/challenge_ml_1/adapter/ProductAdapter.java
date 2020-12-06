@@ -29,10 +29,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     private Context context;
     private ItemsAndSearchViewModel itemsAndSearchViewModel;
 
-    public ProductAdapter(Context context , ArrayList<Product> aProductArrayList ) {
+    public ProductAdapter(Context context ) {
         try {
             this.context = context;
-            this.productArrayList = aProductArrayList;
             itemsAndSearchViewModel = new ViewModelProvider((FragmentActivity) context).get(ItemsAndSearchViewModel.class);
 
         } catch ( Exception e ){

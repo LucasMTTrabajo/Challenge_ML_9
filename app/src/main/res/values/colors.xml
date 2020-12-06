@@ -13,4 +13,8 @@
     <color name="yellow">#FFFF00</color>
     <color name="grey">#6C6C6C</color>
     <color name="light_grey">#B5B3B3</color>
+
+    <color name="ml_green">#51B27C</color>
+    <color name="ml_green_dark">#3A8059</color>
+    <color name="ml_blue">#160A5E</color>
 </resources>

@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:padding="@dimen/fav_margin_6"
         android:layout_weight="5"
-        android:background="@color/light_grey"
+        android:background="@drawable/shape_style_rectangle_border_grey_left_r10"
         android:textStyle="bold"
         android:maxLines="1"
         />
@@ -25,6 +25,7 @@
         android:layout_height="wrap_content"
         android:padding="@dimen/fav_margin_6"
         android:layout_weight="5"
+        android:background="@drawable/shape_style_rectangle_border_white_right_r10"
         android:maxLines="1"
         />
 

@@ -14,16 +14,6 @@ private const val TAG = "ItemsAndSearchRepo"
 
 class ItemsAndSearchRepo {
 
-
-    private fun genericCallResponseQuery ( aCallResponseQuery : Call<ResponseQuery>){
-        try{
-
-        } catch ( e : Exception ){
-            Log.e(TAG, "genericCallResponseQuery: e - ", e)
-        }
-    }
-
-
     fun getItems (aQueryValue : String , aLiveDataProductsList : MutableLiveData<List<Product>>) {
         try{
             val service = RetrofitClientInstance.getApiService()

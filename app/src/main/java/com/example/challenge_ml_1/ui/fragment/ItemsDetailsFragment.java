@@ -3,6 +3,9 @@ package com.example.challenge_ml_1.ui.fragment;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -11,6 +14,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -62,6 +66,7 @@ public class ItemsDetailsFragment extends Fragment {
         try{
             navController = Navigation.findNavController(view);
 
+
             loadViews(view);
 
             if ( getArguments() != null ) {
@@ -77,6 +82,9 @@ public class ItemsDetailsFragment extends Fragment {
 
     private void loadViews (View view ) {
         try{
+            AppCompatActivity activity = (AppCompatActivity) getActivity();
+            activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
             txtVTitle       = view . findViewById(R.id. txtV_title_fragemt_item_detail);
             txtVPrice       = view . findViewById(R.id. txtV_price_fragemt_item_detail);
             txtVQuantity    = view . findViewById(R.id. txtV_quantity_fragemt_item_detail);
@@ -150,4 +158,21 @@ public class ItemsDetailsFragment extends Fragment {
         }
     }
 
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        menu.clear();
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()){
+            case android.R.id.home:
+                getActivity().onBackPressed();
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
