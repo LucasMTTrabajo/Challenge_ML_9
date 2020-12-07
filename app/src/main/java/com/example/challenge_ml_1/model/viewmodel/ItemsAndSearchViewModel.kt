@@ -12,6 +12,12 @@ class ItemsAndSearchViewModel : ViewModel() {
 
     val liveDataProductItem =  MutableLiveData<Product>()
 
+    /**
+     * Consigue en la API los productos coincidentes con el query que se pasa por paramtero.
+     * El resultaddo conseguido se seteara en el 'liveDataProductItems'.
+     *
+     * @param aSearchValue: Nombre del producto que se desea buscar en la API.
+     */
     fun getItems ( aSearchValue : String ) {
         ItemsAndSearchRepo () . getItems( aSearchValue , liveDataProductItems )
     }

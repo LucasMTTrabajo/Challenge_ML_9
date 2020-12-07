@@ -11,6 +11,10 @@ class CategoriesViewModel : ViewModel() {
 
     val liveDataCategorieItem =  MutableLiveData<Categories>()
 
+    /**
+     * Consigue las categorias disponibles en la API.
+     * El resultado será seteado en 'liveDataCategories'.
+     */
     fun getCategories ( ) {
         CategoriesRepo () . getCategories( liveDataCategories )
     }

@@ -15,6 +15,12 @@ private const val TAG = "CategoriesRepo"
 class CategoriesRepo {
 
 
+    /**
+     * Consigue todas las categorias de la API y lo guarda en el LiveData pasado por parametro.
+     *
+     * @param aLiveDataCategoriesList: LiveData donde será seteada las categorias conseguidas.
+     * En algún lugar este LiveData debe tener un observador.
+     */
     fun getCategories ( aLiveDataCategoriesList : MutableLiveData<List<Categories>>) {
         try{
             val service = RetrofitClientInstance.getApiService()
@@ -44,8 +50,6 @@ class CategoriesRepo {
 
 
             call . enqueue( callback )
-
-
         } catch ( e : Exception ) {
             Log.e(TAG, "getCategories: e - ", e)
         }

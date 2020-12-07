@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     private NavController navController;
 
-    Fragment currentFragment;
+    private Fragment currentFragment;
 
 
     @Override
@@ -61,36 +61,30 @@ public class MainActivity extends AppCompatActivity {
 
                 } else Log.e(TAG, "onChanged: Products es NULL. ");
             });
-            itemsAndSearchViewModel.getLiveDataProductItem().observe(this, new Observer<Product>() {
-                @Override
-                public void onChanged(Product product) {
-                    if (product != null) {
-                        getCurrentFragment();
+            itemsAndSearchViewModel.getLiveDataProductItem().observe(this, product -> {
+                if (product != null) {
+                    getCurrentFragment();
 
-                        if (currentFragment instanceof ItemsFragment) {
-                            searchView.setQuery("", false);
-                            searchView.setIconified(true);
-                            ((ItemsFragment) currentFragment).nextViewFragment(product);
-                        }
-
-                    } else Log.e(TAG, "onChanged: product es NULL ");
-                }
-            });
-            
-            navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
-                @Override
-                public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments) {
-
-                    switch ( destination.getId() ) {
-                        case R.id.nav_itemsFragment :
-                            Log.i(TAG, "onDestinationChanged: ItemsFragment");
-                            break;
-                        case R.id.nav_itemsDetailFragment:
-                            Log.i(TAG, "onDestinationChanged: ItemsDetailsFragment");
-                            break;
+                    if (currentFragment instanceof ItemsFragment) {
+                        searchView.setQuery("", false);
+                        searchView.setIconified(true);
+                        ((ItemsFragment) currentFragment).nextViewFragment(product);
                     }
 
+                } else Log.e(TAG, "onChanged: product es NULL ");
+            });
+            
+            navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
+
+                switch ( destination.getId() ) {
+                    case R.id.nav_itemsFragment :
+                        Log.i(TAG, "onDestinationChanged: ItemsFragment");
+                        break;
+                    case R.id.nav_itemsDetailFragment:
+                        Log.i(TAG, "onDestinationChanged: ItemsDetailsFragment");
+                        break;
                 }
+
             });
 
         } catch ( Exception e ){
@@ -120,6 +114,9 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    /**
+     * Toma el Fragment inflado ahora mismo y lo setea en 'currentFragment'.
+     */
     private void getCurrentFragment() {
         currentFragment = getSupportFragmentManager().getPrimaryNavigationFragment().getChildFragmentManager().getPrimaryNavigationFragment();
     }

@@ -14,11 +14,22 @@ import android.widget.RelativeLayout;
 public class Utilities {
     private static final String TAG = "Utilities";
 
+    /**
+     * Ocultar teclado.
+     *
+     * @param context: Contexto actual.
+     * @param view: Vista que tiene actualmente el foco.
+     */
     public static void hideKeyboardFrom(Context context, View view) {
         InputMethodManager imm = (InputMethodManager) context.getSystemService(Activity.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
+    /**
+     * Devuelve un LayoutParams con el ancho y alto del mismo tamaño que el padre.
+     *
+     * @return RelativeLayout.LayoutParams : layout_width = MATCH_PARENT ; layout_height = MATCH_PARENT
+     */
     public static RelativeLayout.LayoutParams getRelativeLayuotParamsFullScreenON ( ){
         try{
             return new RelativeLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
@@ -28,6 +39,11 @@ public class Utilities {
         }
     }
 
+    /**
+     * Devuelve un LayoutParams con el ancho y alto adaptados al contenido.
+     *
+     * @return RelativeLayout.LayoutParams : layout_width = WRAP_CONTENT ; layout_height = WRAP_CONTENT
+     */
     public static RelativeLayout.LayoutParams getRelativeLayuotParamsFullScreenOFF ( ){
         try{
             return new RelativeLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -37,40 +53,4 @@ public class Utilities {
         }
     }
 
-    public static void getScreenSize(Context context) {
-
-        int screenLayout = context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK;
-
-        switch ( screenLayout ) {
-            case Configuration.SCREENLAYOUT_SIZE_LARGE  :
-                break;
-            case Configuration.SCREENLAYOUT_SIZE_NORMAL :
-                break;
-            case Configuration.SCREENLAYOUT_SIZE_SMALL  :
-                break;
-            default :
-                break;
-        }
-    }
-
-    public static int getScreenDensity(Context context) {
-        DisplayMetrics metrics = new DisplayMetrics();
-        ( (Activity) context ). getWindowManager().getDefaultDisplay().getMetrics(metrics);
-        return metrics.densityDpi;
-    }
-
-//    public static int getPlaceHolder ( Context context ) {
-//        int density = getScreenDensity(context);
-//
-//        switch ( density ) {
-//            case DisplayMetrics.DENSITY_HIGH  :
-//                return R.mipmap.ic_placeholder_item;
-//            case DisplayMetrics.DENSITY_MEDIUM :
-//                break;
-//            case DisplayMetrics.DENSITY_LOW  :
-//                break;
-//            default :
-//                break;
-//        }
-//    }
 }
